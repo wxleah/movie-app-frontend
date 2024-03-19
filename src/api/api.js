@@ -1,7 +1,7 @@
 // const listen_api = process.env.LISTEN_API_KEY;
 
 export const searchMovies = async (searchTerm, page) => {
-    const baseUrl = new URL("http://localhost:4000/api/movies/search");
+    const baseUrl = new URL("https://movie-app-backend-h4mu.onrender.com/api/movies/search");
     baseUrl.searchParams.append("searchTerm", searchTerm);
     baseUrl.searchParams.append("page", page.toString());
 
@@ -14,7 +14,7 @@ export const searchMovies = async (searchTerm, page) => {
 }
 
 export const searchPodcast = async (searchTerm) => {
-    const baseUrl = new URL("http://localhost:4000/api/movies/podcasts/search");
+    const baseUrl = new URL("https://movie-app-backend-h4mu.onrender.com/api/movies/podcasts/search");
     baseUrl.searchParams.append("searchTerm", searchTerm);
 
     const response = await fetch(baseUrl);
@@ -27,7 +27,7 @@ export const searchPodcast = async (searchTerm) => {
 }
 
 export const getMovieSummary = async (movieId) => {
-    const url = new URL(`http://localhost:4000/api/movies/${movieId}/summary`);
+    const url = new URL(`https://movie-app-backend-h4mu.onrender.com/api/movies/${movieId}/summary`);
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -37,7 +37,7 @@ export const getMovieSummary = async (movieId) => {
 }
 
 export const getFavoriteMovies = async () => {
-    const url = new URL("http://localhost:4000/api/movies/favorite");
+    const url = new URL("https://movie-app-backend-h4mu.onrender.com/api/movies/favorite");
     const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -47,7 +47,7 @@ export const getFavoriteMovies = async () => {
 }
 
 export const addFavoriteMovie = async (movie) => {
-    const url = new URL("http://localhost:4000/api/movies/favorite");
+    const url = new URL("https://movie-app-backend-h4mu.onrender.com/api/movies/favorite");
     const body = {
         movieId: movie.id
     }
@@ -64,7 +64,7 @@ export const addFavoriteMovie = async (movie) => {
 }
 
 export const removeFavoriteMovie = async (movie) => {
-    const url = new URL("http://localhost:4000/api/movies/favorite");
+    const url = new URL("https://movie-app-backend-h4mu.onrender.com/api/movies/favorite");
     const body = {
         movieId: movie.id
     }
