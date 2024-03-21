@@ -17,7 +17,7 @@ function App() {
       // child route components
       children: routes,
     },
-  ], { basename: import.meta.env.DEV ? '/' : '/movie-app-frontend/' })
+  ])
 
 
   return (
