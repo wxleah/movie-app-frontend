@@ -17,7 +17,7 @@ function App() {
       // child route components
       children: routes,
     },
-  ])
+  ], { basename: '/movie-app-frontend/' })
 
 
   return (
