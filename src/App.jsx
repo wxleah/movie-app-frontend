@@ -7,7 +7,6 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from './components/Layout';
 import routes from "./routes"
-import { defineConfig } from 'vite';
 
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
       // child route components
       children: routes,
     },
-  ], { basename: import.meta.env.DEV ? '/' : defineConfig.base })
+  ], { basename: import.meta.env.DEV ? '/' : '/movie-app-frontend/' })
 
 
   return (
