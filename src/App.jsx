@@ -28,42 +28,12 @@ function App() {
       // child route components
       children: routes,
     },
-  ])
+  ], { basename: import.meta.env.DEV ? '/' : '/react-vite-gh-pages/' })
 
 
   return (
     <>
       <RouterProvider router={router} />
-
-      {/* <div className='container-fluid movie-app'>
-
-          <><div className="row d-flex align-items-center mt-4 mb-4">
-            <MovieListHeading heading="Movies" />
-            <SearchBox
-              value={searchValue}
-              handleSubmit={handleSearchSubmit}
-              handleChange={handleSearchChange} />
-          </div><div className='row'>
-              <MovieList movies={movies}
-                handleFavoritesClick={addFavoriteMovie}
-                favoriteComponent={AddFavorites} />
-              {movies.length !== 0 ?
-                <ViewMore onClick={handleViewMoreClick} /> : <SearchNote />}
-            </div></>
-
-
-          <div className="row d-flex align-items-center mt-4 mb-4">
-            <MovieListHeading heading="Favorites" />
-            <div className='row'>
-
-              <MovieList
-                movies={favorites}
-                handleFavoritesClick={RemoveFavoriteMovie}
-                favoriteComponent={RemoveFavorites}
-              />
-            </div>
-          </div>
-      </div> */}
     </>
   )
 }
